@@ -17,5 +17,9 @@ ln -fs $APP_PATH/dotvimrc ~/.vimrc
 # symlink dottmux 
 ln -fs $APP_PATH/dottmux ~/.tmux.conf
 
+# symlink dottmux 
+mkdir -p ~/.config/i3
+ln -fs $APP_PATH/doti3config ~/.config/i3/config
+
 # latex
 sudo apt -y install texlive-full
