@@ -1,0 +1,54 @@
+" Enable pathogen for installing plugins
+" execute pathogen#infect()
+" Enabling filetype support provides filetype-specific indenting,
+" syntax highlighting, omni-completion and other useful settings.
+filetype plugin indent on
+syntax on
+
+" set numbering, pretty important I guess
+set rnu
+set nu
+
+" various settings
+set autoindent                 " Minimal automatic indenting for any filetype.
+set backspace=indent,eol,start " Proper backspace behavior.
+set hidden                     " Possibility to have more than one unsaved buffers.
+set incsearch                  " Incremental search, hit `<CR>` to stop.
+set ruler                      " Shows the current line number at the bottom-right
+                               " of the screen.
+set wildmenu                   " Great command-line completion, use `<Tab>` to move
+                               " around and `<CR>` to validate.
+
+" use some nice tab
+set tabstop=2
+set shiftwidth=2
+
+" Persistend undo
+set hidden
+set undofile
+set undodir=~/.vim/undodir
+set undolevels=2048
+set undoreload=65538
+
+" keep vim silent
+set bo=all
+
+" i want to keep folds on leave
+augroup remember_folds
+	autocmd!
+	autocmd BufWinLeave * mkview
+	autocmd BufWinEnter * silent! loadview
+augroup END
+
+au BufRead,BufNewFile *.launch set filetype=html
+
+" quit insertmode
+inoremap jj <ESC>
+
+" map leader to space
+let mapleader = " "
+
+" c makros to be just a touch faster
+autocmd FileType c nnoremap <Leader>p oprintf("\n");<Esc>hhhh
+autocmd FileType c nnoremap <Leader>w owhile() {<ENTER>}<Esc>kwa
+autocmd FileType c nnoremap <Leader>f ofor(int i = 0; i < ; ++i) {<ENTER>}<Esc>kw
