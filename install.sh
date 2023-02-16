@@ -1,4 +1,5 @@
 #!/bin/bash
+# small edit
 
 APP_PATH=`dirname "$0"`
 APP_PATH=`( cd "$APP_PATH" && pwd )`
