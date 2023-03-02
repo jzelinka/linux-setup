@@ -5,7 +5,7 @@ APP_PATH=`dirname "$0"`
 APP_PATH=`( cd "$APP_PATH" && pwd )`
 
 # tools
-sudo apt install -y rsync subversion nmap htop feh
+sudo apt install -y rsync subversion nmap htop feh curl
 sudo apt -y install cifs-utils
 
 # editors
